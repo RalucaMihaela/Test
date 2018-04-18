@@ -1,0 +1,6 @@
+simpleTest1/*
+!simpleTest1/appFirstPb.js
+!simpleTest1/*/appFirstPbTest.js
+simpleTest2/*
+!simpleTest2/appSecondPb.js
+!simpleTest2/*appSecondTest.js
