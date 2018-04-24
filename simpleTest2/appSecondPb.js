@@ -6,17 +6,17 @@ module.exports = function (array) {
     if(array.length === 0) return 0;
 
     for(var index = 0; index < array.length; index++) {
-            if(array.length === 1) return [array[index],0];
             if(parseInt(array[index]) === array[index]) {
                   if(array[index] > firstMAX ) {
                           secondMAX  = firstMAX ;
                           firstMAX  = array[index];
-                      } else if (array[index] > secondMAX ) {
-                        		      secondMAX  = array[index];
-                    	       }
-            } else { 	  secondMAX = 0;
-                    		firstMAX = 0;
-                   }
+                  } else if (array[index] > secondMAX ) {
+                        	secondMAX  = array[index];
+                  }
+            } else { 	 
+                  secondMAX = 0;
+                  firstMAX = 0;
+            }
      }
-   return [firstMAX ,secondMAX ];
+     return [firstMAX ,secondMAX ];
 }
