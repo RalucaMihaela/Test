@@ -1,20 +1,23 @@
-module.exports = function (array, n){
-  var hasDuplicates = false;
-  var sum = 0;
-  var length = array.length;
-    if ( array.length === 0 ) return false;
-  	if( n != length ) return false;
-		for(var index = 0; index< n; index++){
-    		if(array[index] < 1 || array[index] > n){
-        		return false;
+module.exports = function (array, n) {
+
+    var length = array.length;
+    var counter = zeroFilledArray(array.length);
+
+    if (array.length === 0) return false;
+    if (n != length) return false;
+    for (var index = 0; index < array.length; index++) {
+      if (array[index] < 1 || array[index] > n) {
+          return false;
+      } else {
+    		if(counter[array[index]] === 1){
+        			return true;
         }
-        else{
-    		sum += array[index];
-        }
+        counter[array[index]]++;
+      }
     }
-    if(sum == (n*(n+1))/2){
-    		return false;
-    }else{
-    		return true;
-    }
+    return false;
+
+}
+function zeroFilledArray(size) {
+    return new Array(size + 1).join('0').split('');
 }
