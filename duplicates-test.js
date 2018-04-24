@@ -39,6 +39,11 @@ describe('App', function() {
           var n = 5;
           assert.equal(app(array,n),false);
       });
+      it('Equal items', function(){
+          var array = [2,2,2];
+          var n = 3;
+          assert.equal(app(array,n),true);
+      });
 
   });
 });
