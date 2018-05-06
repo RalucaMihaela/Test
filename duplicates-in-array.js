@@ -1,23 +1,14 @@
-module.exports = function (array, n) {
-
-    var length = array.length;
-    var counter = zeroFilledArray(array.length);
-
-    if (array.length === 0) return false;
-    if (n != length) return false;
-    for (var index = 0; index < array.length; index++) {
-      if (array[index] < 1 || array[index] > n) {
-          return false;
-      } else {
-    		if(counter[array[index]] === 1){
-        			return true;
-        }
-        counter[array[index]]++;
-      }
+module.exports = function (array){
+  for(var index = 0; index < array.length; index++){
+       var item = array[Math.abs(array[index])];
+       if (array.length === 0) return false;
+      
+       // if is positive make it negative
+       if (item > 0) {
+       		array[Math.abs(array[index])] = -array[Math.abs(array[index])];
+       } else if (item < 0){  // if negative is duplicate
+      		return true;
+       }
     }
-    return false;
-
-}
-function zeroFilledArray(size) {
-    return new Array(size + 1).join('0').split('');
+  return false;
 }
