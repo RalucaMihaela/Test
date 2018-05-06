@@ -41,7 +41,7 @@ describe('App', function() {
         assert.equal(app(array),2);
       });
       it('Even and odd elements should return sum of even elements', function(){
-        var array = [2, 2, 2];
+        var array = [2, 1, 4];
         assert.equal(app(array),6);
       });
       it('Ignores non-numerical values in array', function(){
