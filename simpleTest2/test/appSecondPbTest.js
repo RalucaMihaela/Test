@@ -28,10 +28,6 @@ describe('App', function() {
         var array = [2,1];
         assert.deepStrictEqual(app(array),[2,1]);
       });
-      it('Only float elements should return 0', function(){
-        var array = [1.2, 3.4, 5.4];
-        assert.deepStrictEqual(app(array),[0,0]);
-      });
       it('Two negative elements should return both elements', function(){
         var array = [-2,-3];
         assert.deepStrictEqual(app(array),[-2,-3]);
